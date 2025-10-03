@@ -1,0 +1,19 @@
+header{
+    background-color: black;
+    padding: 20px;
+    font-size: 20px;
+
+}
+
+nav a{
+    color: azure;
+    margin: 0 10px;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav a:hover{
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
