@@ -8,11 +8,6 @@ import { ProductsStateService } from '../../data-access/products-state.service';
   imports: [],
   templateUrl: './product-list.component.html',
   styles: ``,
-  providers: [ProductsService, ProductsStateService]
+  providers: [ProductsStateService],
 })
-export default class ProductListComponent {
-
-  productsState = inject(ProductsStateService)
-
-
-}
+export default class ProductListComponent {}
