@@ -1,0 +1,15 @@
+ <h3>{{listName()}}</h3>
+        <ol>
+
+            @for (personaje of personajes();
+            track personaje.id) {
+
+            @if (personaje.power > 1000) {
+            <li>
+                <span>{{ personaje.name }}</span>
+                <strong [class.text-danger]="personaje.power>=9000" [class.text-warning]="personaje.power<9000"> {{
+                    personaje.power }}</strong>
+            </li>
+            }
+            }
+        </ol>

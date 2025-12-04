@@ -1,0 +1,35 @@
+<h1>dragon ball page</h1>
+
+<hr>
+
+<section class="row">
+    <div class="col-12 col-sm-6">
+
+        <h3>Agregar: {{ name()}}</h3>
+        <input type="text" class="form-control" placeholder="name" [value]="name()" (input)="name.set(txtName.value)"
+            #txtName>
+        <input type="number" class="form-control" placeholder="power" [value]="power()"
+            (input)="power.set(+txtPower.value)" #txtPower>
+        <button (click)="addPersonaje()" class="mt-2 btn btn-primary">Agregar</button>
+
+    </div>
+
+    <div class="col-12 col-sm-6">
+        <h3>listado</h3>
+        <ol>
+
+            @for (personaje of personajes();
+            track personaje.id) {
+
+            @if (personaje.power > 1000) {
+            <li>
+                <span>{{ personaje.name }}</span>
+                <strong [class.text-danger]="personaje.power>=9000" [class.text-warning]="personaje.power<9000"> {{
+                    personaje.power }}</strong>
+            </li>
+            }
+            }
+        </ol>
+    </div>
+
+</section>
