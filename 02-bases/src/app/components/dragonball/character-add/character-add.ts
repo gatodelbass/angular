@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, Output, signal } from '@angular/core';
 import type { Personaje } from '../../../interfaces/personaje.interface';
 
 @Component({
@@ -10,21 +10,20 @@ export class CharacterAdd {
   name = signal('');
   power = signal(0);
 
+  nuevoPersonajeOutput = output<Personaje>();
+
   addPersonaje() {
     if (!this.name() || !this.power() || this.power() < 0) {
       return;
     }
 
     const nuevoPersonaje: Personaje = {
-      id: 1000,
+      id: Math.floor(Math.random() * 1000),
       name: this.name(),
       power: this.power(),
     };
 
-    // this.personajes().push(nuevoPersonaje); // no recomendado cuando es un array tipo signal
-
-    //this.personajes.update((list) => [...list, nuevoPersonaje]);
-    console.log({nuevoPersonaje});
+    this.nuevoPersonajeOutput.emit(nuevoPersonaje);
     this.resetFields();
   }
 
@@ -32,6 +31,4 @@ export class CharacterAdd {
     this.name.set('');
     this.power.set(0);
   }
-
-  
 }

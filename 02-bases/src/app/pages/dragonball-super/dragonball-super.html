@@ -5,12 +5,12 @@
 <section class="row">
     <div class="col-12 col-sm-6">
 
-        <dragonball-character-add />
+        <dragonball-character-add (nuevoPersonajeOutput)="dragonballService.addPersonaje($event)" />
 
     </div>
 
     <div class="col-12 col-sm-6">
-        <dragonball-character-list listName="listadito" [personajes]="personajes()" />
+        <dragonball-character-list listName="listadito" [personajes]="dragonballService.personajes()" />
 
 
 
