@@ -1,1 +1,15 @@
-<p>search</p>
+<h2 class="text-2xl font-bold mt-5 text-gray-700">buscar gifs</h2>
+
+
+<h3>buscar por nombre, tags etc</h3>
+
+<section class="flex flex-col gap-4">
+    <input type="text" placeholder="buscar" class="mt-3 rounded-sm p-2 border-2 border-gray-400" 
+    (keyup.enter)="onSearch(txtSearch.value)" #txtSearch/>
+
+</section>
+
+
+<div class="py-5">
+    <gif-gallery [gifs]="gifs()"/>    
+</div>
