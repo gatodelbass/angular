@@ -1,0 +1,40 @@
+<section class="m-5">
+    pipes basicos, incluidos en angulae
+</section>
+
+<div class="stats shadow">
+    <div class="stat place-items-center">
+        <div class="stat-title">Lowecase pipe</div>
+        <div class="stat-value">{{nameUpper() | lowercase}}</div>
+        <div class="stat-desc">valor original - {{nameUpper()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">Uppercase pipe</div>
+        <div class="stat-value text-secondary">{{nameLower() | uppercase}}</div>
+        <div class="stat-desc text-secondary">valor original - {{nameLower()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">title case pipe</div>
+        <div class="stat-value text-secondary">{{fullName() | titlecase}}</div>
+        <div class="stat-desc text-secondary">valor original - {{fullName()}}</div>
+    </div>
+</div>
+
+<hr>
+
+<div class="stats shadow">
+    <div class="stat place-items-center">
+        <div class="stat-title">date pipe</div>
+        <div class="stat-value">{{customDate() | date}}</div>
+        <div class="stat-desc">valor original - {{customDate()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">date pipe - otra zona horaria</div>
+        <div class="stat-value">{{customDate() | date:"short" : "GMT-5"}}</div>
+        <div class="stat-desc">valor original - {{customDate()}}</div>
+    </div>
+
+</div>

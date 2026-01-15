@@ -1,0 +1,15 @@
+<p>uncommon-page works!</p>,
+
+<section class=" grid grid-cols-1 md:grid-cols-2 gap-4">
+
+    <app-card title="i18nSelectPipe">
+        <p>saludos {{ client().name}}, es un placer {{ client().gender | i18nSelect:invitationMap}} a nuestro evento</p>
+        <button (click)="changeClient()" class="btn btn-secondary">cambiar cliente</button>
+    </app-card>
+
+     <app-card title="i18nPluralPipe">
+        <p>actualmente {{clients().length | i18nPlural:clientsMap()}} esperando</p>
+        <button [disabled]="clients().length == 0" (click)="deleteClient()" class="btn btn-secondary">borrar cliente</button>
+    </app-card>
+
+</section>

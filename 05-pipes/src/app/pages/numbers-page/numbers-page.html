@@ -1,0 +1,29 @@
+<section class="m-5">
+    pipes numericos
+</section>
+
+<div class="stats shadow">
+    <div class="stat place-items-center">
+        <div class="stat-title">Number pipe</div>
+        <div class="stat-value">{{totalSell() | number: "1.2-2"}} - dos decimales</div>
+        <div class="stat-desc">valor original - {{totalSell()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">Number pipe</div>
+        <div class="stat-value">{{totalSell() | number: "1.1-3"}} - tres decimales</div>
+        <div class="stat-desc">valor original - {{totalSell()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">Currency</div>
+        <div class="stat-value">{{totalSell() | currency:"CAD"}}</div>
+        <div class="stat-desc">valor original - {{totalSell()}}</div>
+    </div>
+
+    <div class="stat place-items-center">
+        <div class="stat-title">Percent</div>
+        <div class="stat-value">{{percentSell() | percent:'1.2-2'}}</div>
+        <div class="stat-desc">valor original - {{percentSell()}}</div>
+    </div>
+</div>
