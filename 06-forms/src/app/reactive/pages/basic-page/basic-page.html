@@ -1,0 +1,85 @@
+<h2>Reactivos: Básicos</h2>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <form autocomplete="off" [formGroup]="theForm" (ngSubmit)="onSave()">
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Producto</label>
+                <div class="col-sm-9">
+
+                    <input type="text" class="form-control" placeholder="Nombre del producto" formControlName="name">
+
+
+                    @if (formUtils.isValidField(theForm, "name")) {
+                    <span class="form-text text-danger">{{ formUtils.getFieldError(theForm, "name")}}
+
+                    </span>
+                    }
+
+
+                </div>
+            </div>
+            <!-- Campo de producto -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Precio</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="Precio del producto" formControlName="price">
+                    @if (formUtils.isValidField(theForm, "price")) {
+                    <span class="form-text text-danger">{{ formUtils.getFieldError(theForm, "price")}}
+
+                    </span>
+                    }
+                </div>
+            </div>
+            <!-- Campo de existencias -->
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Existencias</label>
+                <div class="col-sm-9">
+                    <input type="number" class="form-control" placeholder="Existencias del producto"
+                        formControlName="quantity">
+
+                    @if (formUtils.isValidField(theForm, "quantity")) {
+                    <span class="form-text text-danger">{{ formUtils.getFieldError(theForm, "quantity")}}
+
+                    </span>
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary float-end">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col">
+
+        <span>Valid</span>
+        <pre>{{ theForm.valid| json }}</pre>
+
+        <span>Pristine</span>
+        <pre>{{ theForm.pristine| json }}</pre>
+
+        <span>Touched</span>
+        <pre>{{ theForm.touched| json }}</pre>
+
+        <span>Value</span>
+        <pre>{{ theForm.value| json }}</pre>
+
+        <span>Precio</span>
+        <pre>{{ theForm.controls["price"].value | json }}</pre>
+
+        <span>Producto</span>
+        <pre>{{ theForm.controls["name"].value | json }}</pre>
+    </div>
+</div>
